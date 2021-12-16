@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title> HTML tags </title>
+  <style media="screen">
+    .batman {
+      background-color: #d7d9f2;
+    }
+
+    .flash {
+      background-color: #ffe8d4;
+    }
+
+    caption {
+      padding: 8px;
+      caption-side: bottom;
+    }
+
+    table {
+      border-collapse: collapse;
+      border: 2px solid rgb(100, 100, 100);
+      letter-spacing: 1px;
+      font-family: sans-serif;
+      font-size: .7rem;
+    }
+
+    td,
+    th {
+      border: 1px solid rgb(100, 100, 100);
+      padding: 10px 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="top" align="center">&lt;HTML tags&gt;</h1>
+  <h2> heading tags</h2>
+  <p> h1~h6 </p>
+  <p> 태그를 공부할 때 참고하기 좋은 사이트 </p>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank"> HTML elements reference </a>
+  <h2 align="center"> hading tags는 공통속성 align을 가질 수 있다 </h2>
+  <p align="center"> 단락을 표시하는 건 p태그 <br>
+    개행의 태그는 br 태그 </p>
+
+  <h2> 글씨를 꾸미는 태그 </h2>
+  <p> <b>볼드체 b</b> <i>이탤릭체 i</i> <u>글씨에 밑줄 u </u> <s> 글씨에 중간선 s </s> </p>
+
+  <h2> 앵커태그 </h2>
+  <p> html은 hypertext markup language의 뜻이며 그 중 hypertext는 링크를 의미한다 <br>
+    앵커태그는 a, href 속성을 필수로 가져야 하며 <br>
+    href는 hypertext reference를 의미한다 <br>
+    <a href="https://www.naver.com/"> 네이버 </a> <br>
+    target 속성 _self, _blank <br>
+    _self : 보고 있던 창을 그 링크로 이동, default값 <br>
+    _blank : 새로운 탭이 열리고 이동 <br>
+    <a href="https://www.naver.com/" target="_blank"> 타켓 속성 블랭크 네이버 </a> <br>
+  </p>
+
+  <h4> 내부링크 </h4>
+  <p>
+    앵커태그를 통해 만들어진 링크가 꼭 외부 페이지로만 이동하는 것은 아닙니다.<br>
+    앵커태그를 통해 페이지 내부의 특정 요소로 초점을 이동할 수도 있는데, 이를 내부 링크라고 합니다.<br>
+    내부 링크를 사용할 때는 href 속성값에 #을 쓰고 그 뒤에 페이지 내에서 이동하고자하는 요소의 id 속성값을 적으면 됩니다. <br>
+    <a href="#top"> 맨 위로 이동하기 </a>
+  </p>
+
+  <h2> 의미없이 요소를 묶기 위한 태그(Container) </h2>
+  <p> div : block-level <br>
+    span : inline-level
+  </p>
+  <div>
+    <span>Lorem</span> ipsum dolor sit.
+  </div>
+
+  <h2> 리스트 요소 ul, ol, dl </h2>
+  <p>
+    unordered list : ul
+  <ul>
+    <li>콩나물</li>
+    <li>파</li>
+    <li>국간장</li>
+  </ul>
+  </p>
+
+  <p>
+    ordered list : ol
+  <ol>
+    <li>콩나물</li>
+    <li>파</li>
+    <li>국간장</li>
+  </ol>
+  <p>
+  <p> definition list : dl
+  <dl>
+    <dt>리플리 증후군</dt>
+    <dd>허구의 세계를 진실이라 믿고 거짓된 말과 행동을 상습적으로 반복하는 반사회적 성격장애를 뜻하는 용어</dd>
+    <dt>언더독 효과</dt>
+    <dd>사람들이 약자라고 믿는 주체를 응원하게 되는 현상</dd>
+    <dd>두 번째 설명</dd>
+  </dl>
+  </p>
+
+  <h3> 리스트 중첩 </h3>
+
+  <h4>월드컵 조 편성</h4>
+  <ol>
+    <li>
+      A조
+      <ul>
+        <li>러시아</li>
+        <li>우루과이</li>
+        <li>사우디 아라비아</li>
+      </ul>
+    </li>
+    <li>
+      B조
+      <ul>
+        <li>이란</li>
+        <li>스페인</li>
+        <li>포르투갈</li>
+      </ul>
+    </li>
+    <li>
+      C조
+      <ul>
+        <li>프랑스</li>
+        <li>덴마크</li>
+        <li>호주</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>이미지 태그 img</h2>
+  <p> 닫는 태그가 없는 빈 태그<br>
+    문서에 이미지를 삽입한다.<br>
+    src:이미지 경로를 지정한다.<br>
+    alt:이미지의 대체 텍스트를 입력한다.(웹 접근성, 시각장애인, 이미지 로딩 오류시)<br>
+    width/height : 이미지의 크기를 지정한다, 한 가지만 정의해도 원본사이즈의 비율을 맞춰 변동된다.<br>
+  </p>
+  <a href="#top"><img src="./hotdog.jpg" alt="쿼카 핫도그" width="400"></a>
+  <img src="http://placehold.it/500X250" alt="">
+  <h4> 상대경로와 절대경로 </h4>
+  <p>
+    src 속성에는 이미지의 경로가 들어가며, 이미지의 상대경로와 절대경로가 있습니다.<br>
+    상대경로는 현재 웹 페이지를 기준으로 상대적으로 이미지의 위치를 나타내는 경로이고,<br>
+    절대경로는 실제 그 이미지가 위치한 곳의 전체 경로입니다
+    상대경로에서 ./는 페이지가 있는 현재 폴더를 나타냅니다.
+  </p>
+  <h4>이미지 파일 확장자 GIF vs JPG vs PNG </h4>
+  <ul>
+    <li>gif : 256색으로 제한적이지만 용량이 작고, 애니메이션과 투명이미지가 가능하다.</li>
+    <li>jpg : 높은 압축률과 자연스러운 색상 표현이 가능하며 사진이나 일반적인 그림에 사용한다. 투명이미지를 지원하지 않는다.</li>
+    <li>png : jpg와 비교했을 때, 이미지 손실이 없고 투명과 반투명 모두 지원한다.</li>
+  </ul>
+
+  <h2>표, 테이블요소</h2>
+  <ul>
+    <li>td(본문), th(제목행) : 데이터 셀</li>
+    <li>tr : 행(table-row)</li>
+    <li>table : 표</li>
+    <li>caption : 표의 제목</li>
+    <li>thead : 제목행을 그룹</li>
+    <li>tfoot : 바닥행을 그룹</li>
+    <li>tbody : 본문행을 그룹</li>
+    <li>colspan : 셀을 가로방향으로 병합</li>
+    <li>rowspan : 셀을 가로방향으로 병합</li>
+  </ul>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+      <td>16</td>
+    </tr>
+  </table>
+
+  <table> 
+    <caption>Monthly Savings</caption>
+    <thead>
+      <tr>
+        <th>Month</th>
+  <th>Savings</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td>January</td>
+        <td rowspan="2">$100</td>
+      </tr>
+      <tr>
+  <td>February</td>
+
+      </tr> 
+    </tbody>
+    <tfoot>
+      <tr>
+  <td colspan="2">Sum</td>
+      </tr>
+    </tfoot>
+ 
+  </table>
+
+  <h3> 복잡한 테이블 </h3>
+  <table>
+    <caption>Specification values</caption>
+    <thead>
+      <tr>
+        <th rowspan="2">Grade.</th>
+        <th rowspan="2">Point.</th>
+        <th colspan="2">Strength</th>
+        <th rowspan="2">Percent.</th>
+      </tr>
+      <tr>
+        <th>kg/mm</th>
+        <th>lb/in</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hard</td>
+        <td>0.45</td>
+        <td>56.2</td>
+        <td>80,000</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>Medium</td>
+        <td>0.45</td>
+        <td>49.2</td>
+        <td>70,000</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>Soft</td>
+        <td>0.45</td>
+        <td>42.2</td>
+        <td>60,000</td>
+        <td>30</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <b>강의에서 다루지 않은 테이블 관련 속성</b>
+  <ul>
+    <li>colgroup</li>
+    <li>col</li>
+    <li>scope</li>
+    <li>header : The header HTML element represents introductory content, typically a group of introductory or navigational aids</li>
+  </ul>
+  </p>
+  <header class="page-header">
+    <h1>Cute Puppies Express!</h1>
+  </header>
+  <table>
+    <caption>Superheros and sidekicks</caption>
+    <colgroup>
+      <col>
+      <col span="2" class="batman">
+      <col span="2" class="flash">
+    </colgroup>
+    <tr>
+      <td> </td>
+      <th scope="col">Batman</th>
+      <th scope="col">Robin</th>
+      <th scope="col">The Flash</th>
+      <th scope="col">Kid Flash</th>
+    </tr>
+    <tr>
+      <th scope="row">Skill</th>
+      <td>Smarts</td>
+      <td>Dex, acrobat</td>
+      <td>Super speed</td>
+      <td>Super speed</td>
+    </tr>
+  </table>
+
+  <h2>폼 관련 요소</h2>
+  <p>서버에 데이터를 전달하기 위한 요소들</p>
+  <ul>
+    <li>input 요소 : 대표적인 폼 요소로, 다양한 type 속성으로 여러 종류의 입력 양식으로 나타난다.</li>
+    <li>type으로는 text, password, radio, checkbox, file, image, submit, reset, button...</li>
+    <li>레이블 요소는 웹 접근성과 관련이 있다</li>
+    <li>fieldset : 여러 개의 폼 요소를 그룹화하여 구조적으로 만들기 위해 사용</li>
+    <li>legend : 폼 요소의 제목으로 fieldset 요소 내부에 작성</li>
+    <li>form 요소</li>
+    <li>action : 폼데이터를 처리하기 위한 서버의 주소</li>
+    <li>method : 데이터를 전송하는 방식을 지정(get-민감한 정보 전달시 사용하면 X, post)</li>
+  </ul>
+  <form action="index.html" method="post">
+    <fieldset>
+      <legend>기본 정보</legend>
+      <label for="userid"> 아이디 :</label>
+      <input type="text" placeholder="영문으로 입력하세요" id="userid"> <br>
+      <label for="password">비밀번호 :</label> <input type="password" id="password"><br>
+      성별 : <label for="male">남</label> <input type="radio" name="sex" id="male" checked>  <label for="female">여</label><input type="radio" name="sex" id="female"> <br>
+    </fieldset>
+    <fieldset>
+      <legend>부가정보</legend>
+      취미 : 영화<input type="checkbox" name="hobby"> 음악<input type="checkbox" name="hobby"> 독서<input type="checkbox" name="hobby"><br>
+      프로필 사진 업로드 : <input type="file"><br>
+
+      <input type="image" src="https://w7.pngwing.com/pngs/926/438/png-transparent-login-illustration-login-button-computer-icons-adztoday-s-login-button-free-text-logo-sign.png" alt="로그인" width="100">
+      <p>SELECT 요소</p>
+      <select>
+        <option>서울</option>
+        <option>강원</option>
+        <option selected>제주</option>
+        <option>부산</option>
+      </select>
+      <p>Text Area 요소</p>
+      자기소개 : <textarea rows="5" cols="80" placeholder="자기소개를 짧게 해주세요"></textarea><br>
+    </fieldset>
+    <fieldset>
+      <legend>button</legend>
+      input type<br>
+      <input type="submit" value="전송"><br>
+      <input type="reset" value="초기화"><br>
+      <input type="button" value="등록"><br>
+      버튼 태그 <br>
+      <button type="reset">취소</button><br>
+      <button type="submit">전송</button><br>
+    </fieldset>
+
+
+    </form>
+
+</body>

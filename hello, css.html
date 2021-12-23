@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <style>
+        p {
+            color: gray
+        }
+
+        p[class] {
+            color: silver;
+        }
+
+        p[class][id] {
+            text-decoration: underline;
+        }
+
+        p[class~="color"] {
+            font-style: italic;
+        }
+
+        p[class^="color"] {
+            font-style: italic;
+        }
+
+        p[class$="color"] {
+            font-style: italic;
+        }
+
+        p[class*="color"] {
+            font-style: italic;
+        }
+    </style>
+    <link rel="stylesheet" href=".\style.css">
+</head>
+
+<body>
+    <h2>
+        CSS : cascading style sheets
+    </h2>
+    <p>
+        CSS의 속성 = property
+        html의 속성 = attribute
+    </p>
+    <p style="color:blue;"><b>Hello, CSS (inline style)</b></p>
+    <p>
+        Internal style
+    </p>
+    <h1>External style</h1>
+
+    <h2>선택자</h2>
+    <p>
+    <ul>
+        <li>요소선택자(태그)</li>
+        <li>그룹화(Gruoping) : 선택자, 전체선택자(*), 선언, 선택자&선언</li>
+    </ul>
+    </p>
+
+    <h2>CLASS 선택자</h2>
+    <dl>
+        <dt class="html">HTML</dt>
+        <dd><span class="html">HTML</span>은 문서의 구조를 나타냅니다.</dd>
+        <dt class="css">CSS</dt>
+        <dd><span class="css">CSS</span>는 문서의 표현을 나타냅니다.</dd>
+    </dl>
+
+    <h2>ID 선택자</h2>
+    <p id="bar">
+        선택자는 해쉬 기호를 사용합니다.<br>
+        문서내에 유일한 요소에 사용합니다.<br>
+        구체성의 값이 다름.
+    </p>
+
+    <h2>선택자의 조합</h2>
+    <p>
+        /* 요소와 class의 조합 */<br>
+        p.bar { ... }<br>
+
+        /* 다중 class */<br>
+        .foo.bar { ... }<br>
+
+        /* id와 class의 조합 */<br>
+        #foo.bar { ... }
+    </p>
+
+    <h4>다중 클래스</h4>
+    <dl>
+        <dt class="html css">JS</dt>
+        <dd><span class="html css">JS</span>는 문서의 동작을 나타냅니다.</dd>
+    </dl>
+
+
+    <h2>속성 선택자</h2>
+    <!-- <ul>
+            <li>단순 속성으로 선택</li>
+            <li>정확한 속성 값으로 선택</li>
+            <li>부분 속성값으로 선택</li>
+        </ul> -->
+
+
+    <h4>단순속성으로 선택</h4>
+    <p class="html">Hello</p>
+    <p class="css">CSS</p>
+    <p class="html css" id="title">HTML</p>
+
+    <h4>정확한 속성값으로 선택</h4>
+    <p>
+        p[class="foo"] { color: silver; }<br>
+        p[id="title"] { text-decoration: underline; }
+    </p>
+
+    <h4>부분 속성값으로 선택</h4>
+    <p>
+        부분 속성값으로 선택은 속성 이름과 속성값 사이에 사용되는 기호에 따라 동작이 조금 다릅니다. <br>
+        [class~="bar"] : class 속성의 값이 공백으로 구분한 "bar" 단어가 포함되는 요소 선택 <br>
+        [class^="bar"] : class 속성의 값이 "bar"로 시작하는 요소 선택 <br>
+        [class$="bar"] : class 속성의 값이 "bar"로 끝나는 요소 선택 <br>
+        [class*="bar"] : class 속성의 값이 "bar" 문자가 포함되는 요소 선택
+    </p>
+    <p class="color hot">red</p>
+    <p class="cool color">blue</p>
+    <p class="colorful nature">rainbow</p>
+
+    <h2>문서구조 관련 선택자</h2>
+    <dl>
+        <dt>자손선택자</dt>
+        <dd>선택자 사이를 공백으로 구분</dd>
+        <dd>div span {color:red;}</dd>
+        <dt>자식선택자</dt>
+        <dd>선택자 사이를 >로 구분</dd>
+        <dd>div > span {color:red;}</dd>
+        <dt>인접형제 선택자</dt>
+        <dd>선택자 사이를 +로 구분</dd>
+        <dd>div + span {color:red;}</dd>
+    </dl>
+
+    <div>
+        <h1><span>HTML</span>: Hyper Text Markup Language</h1>
+        <span>CSS는 문서를 꾸며줍니다.</span>
+    </div>
+    <span>Javascript는 문서를 동적으로 제어할 수 있습니다.</span>
+    <p>
+        HTML과 CSS와 JAVASCRIPT를 이용해서 멋진 웹 사이트를 제작할 수 있습니다.
+    </p>
+
+    <h2>가상 선택자(pseudo selector)</h2>
+    <p>
+        <b>가상클래스(pseudo class)</b><br>
+        가상클래스는 미리 정의해놓은 상황에 적용이 되도록 약속되어있는 보이지 않는 클래스
+    </p>
+    <a href="https://developer.mozilla.org/ko/docs/Web/CSS/Pseudo-classes" target="_blank" >가상클래스 참고</a>
+
+    <ul>
+        <li>:focus: 현재 입력 초점을 가진 요소에 적용</li>
+        <li>:hover: 마우스 포인터가 있는 요소에 적용</li>
+        <li>:active: 사용자 입력으로 활성화된 요소에 적용</li>
+    </ul>
+    <a href="https://developer.mozilla.org/ko/docs/Web/CSS/Pseudo-elements" target="_blank">가상요소선택자 참고</a>
+    <p>
+        <b>가상요소(pseudo element)</b><br>
+        미리 정의해놓은 위치에 삽입이 되도록 약속되어있는 보이지 않는 요소
+    </p>
+    <ul>
+        <li>:before : 가장 앞에 요소를 삽입</li>
+        <li>:after : 가장 뒤에 요소를 삽입</li>
+        <li>:first-line : 요소의 첫 번째 줄에 있는 텍스트</li>
+        <li>:first-letter : 블록 레벨 요소의 첫 번째 문자</li>
+    </ul>
+    <p id="lorem"> 
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit sees cillum dolors eu fugiat null
+        pariatur. Excepteur sint occaecat cupidatat non prodient, sunt in culpa qui officia deserunt mollit anim id estlaborum.
+    </p>
+
+    <h2>구체성(명시도)</h2>
+    구체성은 선택자를 얼마나 명시적으로 선언했느냐를 수치화 한 것
+    <ul id="colorcoding">
+        <li id="colorcoding">0, 1, 0, 0 : 선택자에 있는 모든 id 속성값</li>
+        <li id="colorcoding">0, 0, 1, 0 : 선택자에 있는 모든 class 속성값, 기타 속성, 가상 클래스</li>
+        <li id="colorcoding">0, 0, 0, 1 : 선택자에 있는 모든 요소, 가상 요소</li>
+        <li id="colorcoding">1, 0, 0, 0 : 인라인 스타일 방식으로 선언된 스타일</li>
+        <li id="colorcoding">전체 선택자는 0, 0, 0, 0을 가진다.</li>
+        <li id="colorcoding">조합자는 구체성에 영향을 주지 않는다. (>, + 등)</li>
+        <li id="colorcoding">important 키워드는 별도의 구체성 값은 없지만, 모든 구체성을 무시하고 우선권을 갖는다.</li>
+    </ul>
+
+    <p>
+        <b>Example</b><br>
+        h1 { ... }  /* 0,0,0,1 */<br>
+        body h1 { ... }  /* 0,0,0,2 */<br>
+        .grape { ... }  /* 0,0,1,0 */<br>
+        *.bright { ... }  /* 0,0,1,0 */<br>
+        p.bright em.dark { ... }  /* 0,0,2,2 */<br>
+        #page { ... }  /* 0,1,0,0 */<br>
+        div#page { ... }  /* 0,1,0,1 */<br>
+    </p>
+
+    <h2>상속</h2>
+    부모 속성의 스타일을 자식 속성은 스타일을 상속받는다.<br>
+    박스모델 속성들은 상속되지 않는다.<br>
+    상속된 값은 아무런 구체성을 가지지 않는다. 
+
+    <h1 id="page">Hello, <em>CSS</em></h1>
+
+    <h2>캐스케이딩 Cascading</h2>
+    cascading은 스타일 규칙들이 어떠한 기준으로 요소에 적용되는지를 정한 규칙입니다.<br>
+    cascading은 폭포가 내려오는 모양처럼 단계적인 이라는 의미를 지니며,<br>
+    모든 스타일 규칙들은 cascading의 단계적인 규칙에 따라 요소에 적용됩니다.<br>
+    <span style="color: gray;">구체성은 캐스케이딩 규칙 중 하나.</span>
+
+    <h4>캐스케이드 규칙</h4>
+    <ol>
+        <li>중요도(!important)&출처
+            <ul>
+                <li>기본적으로 !important로 선언된 모든 규칙은 그렇지 않은 규칙보다 우선한다.</li>
+                <li>출처는 제작자, 사용자, 사용자 에이전트로 구분한다.</li>
+                <li>우선순위 : 사용자 !important -> 제작자 !important -> 제작자 스타일 -> 사용자 스타일 -> 사용자 에이전트 스타일 </li>
+            </ul>
+        </li>
+        <li>구체성</li>
+        <li>선언순서
+            <ul>
+                <li>나중에 선언된 것이 우선하게 됨.</li>
+            </ul>
+        </li>
+    </ol>
+    <p style="text-align: center; font-size: 2em;" id="last" >
+        <b>Study More</b> >>
+        <a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank">
+            CSS selector</a>
+    </p>
+   
+</body>
+</html>

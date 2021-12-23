@@ -1,0 +1,77 @@
+/*external style*/
+h1{
+    color : skyblue;
+}
+h2{
+    text-align: center;
+    background-color: violet;
+    margin: 3px;
+}
+.html{
+    color:purple;
+}
+.css{
+    text-decoration: underline;
+}
+#bar {
+    background-color: lightgoldenrodyellow;
+    color: black;
+}
+.html.css {
+    border : 1px solid;
+}
+
+/*자손선택자*/
+/*div span {color:red;}*/
+
+/*자식선택자*/
+/*div > span {color:red;}*/
+
+/*인접 형제 선택자*/
+div + span {color:red;}
+
+/* 
+body 요소의 자식인 div 요소의 자손인 table 요소 바로 뒤에 인접한 ul 요소 선택!
+조합해서 사용   
+body > div table + ul { ... } 
+*/
+
+li#colorcoding:first-child{
+    color: salmon;
+}
+li#colorcoding:last-child{
+    color:slateblue;
+}
+
+a:link {color:blue;}
+a:visited{color:gray;}
+
+a:focus { background-color:papayawhip; }
+a:hover { font-weight: bold; }
+a:active { color: red; }
+
+/*가상요소*/
+/*p::before{
+    color :red;
+    content : "before 가상 요소를 활용한 내용";
+}
+p::after{
+    color: blue;
+    content: "after 가상 요소를 활용한 내용";
+}
+*/
+p#lorem::first-line{
+    color:yellow;
+}
+
+p::first-letter{
+    font-size: 1.5em;
+}
+
+p#last::first-letter{
+    font-size: 1em;
+}
+/*상속
+* { color: red; }
+*/
+h1#page { color: gray; }

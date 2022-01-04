@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS chapter 5</title>
+  <style>
+      div {
+          height: 400px;
+          background-color: skyblue;
+          background-image: url(https://www.w3schools.com/CSSref/img_tree.gif);
+          background-repeat: repeat-x;
+          background-position: center top;
+          /* 축약형 
+           * background: yellow url(https://www.w3schools.com/CSSref/img_tree.gif) no-repeat center top;
+           */
+      
+      }
+      span {
+          background-color: pink;
+      }
+      p {   
+        padding : 20px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: cadetblue;
+        border-radius: 25px;
+        margin : 10px;
+      }
+      table {
+        border-collapse: collapse;
+        border: 2px solid black; /*축약형*/
+        margin-left: 30px;
+        
+    }
+      th, tr, td{
+        border-width : 1px;
+        border-style: solid;
+        border-color: black;
+        padding : 10px;
+        text-align: center;
+      }
+    
+    .highlight {
+        background-color: yellow; 
+        width: 400px; 
+        padding:5px 0px 5px 30px;
+    }
+     
+  </style>
+</head>
+
+<p>
+    &#60;절대 길이&#62;<br>
+    절대 길이는 고정된 크기 단위로, 다른 요소의 크기에 의해 영향을 받지 않습니다.<br>
+</p>    
+    <ul>
+        <li>
+            <dl>
+                <dt>px ( 1px = 1/96th of 1 inch )</dt>
+                <dd>절대 길이이므로 다른 요소의 영향을 받지 않아 화면에서 고정된 크기를 가지지만, 장치의 해상도에 따라 상대적입니다.<br>
+                    여러 환경에서 디자인을 같게 표현하고 브라우저 호환성에 유리한 구조로 되어 있어서,<br>
+                    디자인 의도가 많이 반영된 웹사이트의 경우 픽셀 단위를 사용하는 것을 권장하고 있습니다.<br>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>pt ( 1pt - 1/72 of 1 inch )</dt>
+                <dd>
+                    컴퓨터가 없던 시절부터 있던 단위입니다. <br>
+                    인쇄물이나 워드프로세서 프로그램에서 사용된 가장 작은 표준 인쇄단위입니다. <br>
+                    웹 화면에 인쇄용 문서를 위한 스타일을 적용할 때 유용하게 사용할 수 있습니다.<br>
+                    그러나 사용하는 기기의 해상도에 따라 차이가 있어 W3C에서도 pt는 웹개발 시 권장하는 단위가 아닙니다.<br>
+                    예를 들면 [Windows에서는 9pt = 12px, Mac에서는 9pt = 9px] 로 보이게 됩니다.<br>
+                </dd>
+            </dl>
+        </li>
+    </ul>    
+
+
+
+
+<p>
+    &#60;상대 길이	&#62;<br>
+    상대 길이는 다른 요소의 크기나 폰트 크기, 브라우저(viewport) 등의 크기에 따라 상대적으로 값이 변합니다.<br>
+</p>
+
+<ul>
+    <li>% : 부모의 값에 대해서 백분율로 환산한 크기를 갖게 됩니다.</li>
+    <li>em : font-size를 기준으로 값을 환산합니다. 소수점 3자리까지 표현 가능합니다.</li>
+    <li>rem : root의 font-size를 기준으로 값을 환산합니다.</li>
+    <li>vw : viewport의 width값을 기준으로 1%의 값으로 계산됩니다.</li>
+</ul>
+
+
+
+<h2>
+    속성 - background
+</h2>
+
+<div>
+    배경에 대해서 알아볼까요? (div는 블록 속성 )
+</div>
+<br>
+<span>
+    배경에 대해서 알아볼까요? (span은 인라인 속성)
+</span>
+
+
+<h2>속성 - boxmodel</h2>
+<p>
+    HTML의 모든 요소는 사각형의 박스 형태로 만들어집니다. <br>
+    박스는 총 4가지의 세분된 영역으로 구성되어있으며 영역마다 다양한 스타일을 적용할 수 있습니다. <br>
+    이 4가지 영역을 통틀어서 박스모델이라고 합니다. 
+</p> 
+<ul>
+    <li>center 영역</li>
+    <li>border 영역</li>
+    <li>padding 영역</li>
+    <li>margin 영역</li>
+</ul>
+<p>
+    &#60;축약형&#62;<br>
+    상 -> 우 -> 하 -> 좌 (top -> right -> botton -> left) 순으로 작성가능<br>
+    시계방향!<br>
+    상하 같을때 또는 좌우가 같을때 축약 가능하다
+</p>
+<p>
+    &#60;margin auto&#62;<br>
+    브라우저에 의해 계산된 값이 적용되며, <br>
+    주로 좌우정렬을 할 때 이용한다.
+</p>
+<p>
+    &#60;margin collapse&#62;<br>
+    마진 병합은 인접한 두 개 이상의 수직 방향 박스의 마진이 하나로 합쳐지는 것을 의미합니다.<br>
+    마진 병합이 다음 세가지의 경우에 일어납니다.<br>
+    <br>
+    1. 두 요소가 상하로 인접한 경우: 위 요소의 하단 마진과 아래 요소의 상단 마진의 병합이 일어납니다.<br>
+    2. 부모 요소와 첫 번째 자식 요소 또는 마지막 자식 요소<br>
+    2-1. 부모 요소의 상단 마진과 첫 번째 자식 요소의 상단 마진 병합이 일어납니다.<br>
+    2-2. 부모 요소의 하단 마진과 마지막 자식 요소의 하단 마진 병합이 일어납니다.<br>
+    3. 내용이 없는 빈 요소의 경우: 해당 요소의 상단 마진과 하단 마진의 병합이 일어납니다.<br>
+    <br>
+    마진 병합은 수직 방향으로만 이루어지며, 좌우에 대해서는 일어나지 않습니다. <br>
+    마진 병합은 마진이 반드시 맞닿아야 발생하기 때문에 2,3번째의 경우 패딩 및 보더가 없어야 합니다.<br>
+</p>
+<p>
+    &#60;margin과 padding의 비교&#62;<br>
+    %는 상하좌우의 방향에 관계없이 모두 요소의 width 값을 기준으로 값이 결정 됩니다. 
+</p>
+    <table>
+        <thead>
+            <tr> 
+                <th> </th>
+                <th>+</t>
+                <th>-</th>
+                <th>auto</th>
+                <th>단위</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>margin</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td> 
+                <td>px, % ...</td>
+            </tr>
+            <tr>
+                <td>padding</td>
+                <td>O</td>
+                <td>X</td>
+                <td>X</td>
+                <td>px, % ...</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2> 속성 - width </h2>
+    <ul>
+        <li>width는 기본적으로 content 영역의 너비를 지정합니다.<br>
+            box-sizing이라는 속성을 이용하여 padding, border 영역을 기준으로 크기를 가질 수 있도록 변경할 수 있습니다. <br>
+            심화 과정에서 다룰 속성이지만, 미리 살펴보는 것도 좋을 것 같습니다.
+        </li>
+        <li>부모가 인라인 레벨 요소일 때, 자식(블록 요소)이 width 값에 %를 가지면, 가장 가까운 블록 레벨인 조상의 width를 기준으로 계산됩니다.<br>
+            만일 최상단까지 블록 레벨 요소가 없으면 body를 기준으로 계산됩니다. </li>
+    </ul>
+    <h2> 속성 - height </h2>
+    <ul>
+        <li>width 속성과 유사하다.</li>
+    </ul>
+    <h3 class="highlight" > Box size = (w,h) + padding + border </h3>

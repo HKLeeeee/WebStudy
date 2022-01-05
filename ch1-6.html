@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title> 폰트, 텍스트  </title>
+    <style>
+        a{
+            font-size : 1.5em;
+        }
+        li{
+            line-height: 2;
+        }
+        body {
+            margin-left: 20px;
+        }
+        .listtitle {
+            font-weight: bold;
+            background-color: yellow;
+            line-height: 200%;
+            text-transform: uppercase;
+        }
+    </style>
+
+</head>
+<body>
+    <img src="https://cphinf.pstatic.net/mooc/20180930_2/1538299310812y3Shi_PNG/11123.png" alt="타이포그래피" width="600">
+    <br><a href="https://developer.mozilla.org/ko/docs/Web/CSS/font-family">font-family</a>
+    <ul>
+        <li><b>family-name</b>: 사용할 폰트의 이름을 나타내며 ' , ' 로 구분하여 여러 개 선언 할 수 있습니다. 먼저 선언된 순서대로 우선순위가 결정됩니다.  이름 중간에 공백이 있거나, 한글일 경우 홑따옴표로 묶어서 선언합니다.</li>
+        <li><b>generic-family</b>: family-name으로 지정된 글꼴을 사용할 수 없을 경우를 대비해, 브라우저가 대체할 수 있는 폰트가 필요한 경우 선택할 수 있게 해줍니다. font-family 속성의 맨 마지막에 선언해야 하며, 키워드이기 때문에 따옴표 등의 인용부호로 묶지 않는 것이 원칙입니다. 예를 들면 아래와 같이 선언하여 사용할 수 있습니다.</li>
+        <li>자식 요소에서 font-family 재선언 시 generic-family도 다시 선언해주어야 한다.</li>
+    </ul>
+    
+    <h2>line-height</h2>
+    <img src="https://cphinf.pstatic.net/mooc/20180925_292/1537812871995OXjoa_PNG/1234.png" alt="인라인하이트" width="600">
+    <ul>
+        <li>line-height 속성을 이용해 이 행간을 조정<br>
+            그러나 정확하게 line-height는 줄의 높이를 의미하는 것이고, 이를 이용해서행간을 조정할 수 있는 것입니다.</li>
+        <li>line-height로 제어되는 부분을 line-box라고도 하며 이는 타이포그래피 구조에서 배웠던 [em 박스] + [상하단의 여백]까지를 의미합니다.</li>
+    </ul>
+    
+    &#60;속성값&#62;
+    <dl>
+        <dt><span class="listtitle">normal</span></dt>
+        <dd>기본값으로 브라우저의 기본 속성을 따릅니다. <br> 
+            폰트에 따라 브라우저에 따라 다르지만 보통 1.2 정도로 할당되어 있습니다.</dd>
+        <dt><span class="listtitle">number</span></dt>
+        <dd>font-size를 기준으로 설정한 숫자만큼 배율로 적용합니다.</dd>
+        <dt><span class="listtitle">length</span></dt>
+        <dd>px, em 등 고정 수치로 할당할 수 있습니다.</dd>
+        <dt><span class="listtitle">%</span></dt>
+        <dd>font-size를 기준으로 설정한 퍼센트만큼 배율로 적용합니다.</dd>
+    </dl>
+
+</body>

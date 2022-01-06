@@ -13,6 +13,17 @@
             padding: 5px;
             line-height: 2;
             margin: 10px 0 10px 0;
+            display: inline;
+        }
+        h2{
+            width: 300px;
+            border-style: solid;
+            border-width: 5px;
+            border-left-color: red;
+            border-top-color: yellow ;
+            border-right-color: green;
+            border-bottom-color: blue ;
+            padding:10px  ;
         }
 
         table {
@@ -53,16 +64,19 @@
         .container :nth-child(2) {
             background-color: skyblue;
         }
+       
     </style>
 </head>
 
 <body>
     <h2>Display</h2>
-    요소의 rendering box 유형을 결정<br>
     <div class="codeblock">
         diplay:none|block|inline|inline-block|list-item|flex|inline-flex|table|table-cell
     </div>
-    inline-block : inline level 요소처럼 렌더링(배치)되지만 block level의 성질을 가짐<br>
+    <p>
+        요소의 rendering box 유형을 결정<br>
+        inline-block : inline level 요소처럼 렌더링(배치)되지만 block level의 성질을 가짐
+    </p>
     <table>
         <thead>
             <tr>
@@ -103,7 +117,7 @@
     </table>
     <h2>Visibility</h2>
     <div class="codeblock">visibility:visible|hidden|collapse </div>
-    collapse는 table속성에서만, internet explore와 firefox에서만 rendering 됨 <br>
+    <p>collapse는 table속성에서만, internet explore와 firefox에서만 rendering 됨 </p>
     <h3>display:none과 visibility:hidden의 차이점</h3>
     <ul>
         <li>display:none : 요소가 렌더링 되지 않음(DOM에 존재하지 않음)</li>
@@ -137,8 +151,10 @@
     </div>
 
     <h2 style="clear: both;">clear</h2>
-    floating 된 요소의 영향에서 벗어나 다음 행으로 이동<br>
-    block-level 요소에만 적용이 가능하다<br>
+    <p>
+        floating 된 요소의 영향에서 벗어나 다음 행으로 이동<br>
+        block-level 요소에만 적용이 가능하다
+    </p>
     <div class="codeblock">clear: none | left | right | both | initial | inherit;</div>
     <ul>
         <li>none : 양쪽으로 floating 요소를 허용(기본값)</li>
@@ -151,6 +167,24 @@
     <div class="codeblock">position: static | absolute | fixed | relative | sticky | initial | inherit;</div>
     <p>
         요소의 위치를 원하는 곳으로 이동시킬 때 사용<br>
+        static이 기본값(default) <br>
         부모요소가 relative로 지정된 것이 없을때는 body를 기준으로 상대적 위치가 결정됨.
     </p>
+    <h2>z-index</h2>
+    <p>박스가 겹치는 순서를 지정하는 속성. 수치로 쌓임 순서를 설정하고 음수도 가능하다.</p>
+    <div class="codeblock">z-index: auto | number | initial | inherit;</div>
+    <ul>
+        <li>position 값이 static이 아닌 경우 지정가능</li>
+        <li>순서 값이 없을 경우 생성순서(코드상 순서)에 따라 쌓임</li>
+        <li>부모가 z-index 값이 있을 경우 부모 안에서만 의미있음</li>
+        <li>큰 값이 가장 위쪽(음수 사용 가능)</li>
+    </ul>
+
+    <h2>유효성검사 </h2>
+    <p>
+        HTML/CSS 코드를 작성하고 나면 항상 유효성 테스트를 실시해야 합니다. <br>
+        유효성 검사를 통해 마크업 문법상 에러가 없는지 표준에 맞게 작성되었는지 알 수 있고, <br>
+        사용성과 접근성, SEO 최적화 개선에도 도움이 됩니다. <br>
+    </p>
+    <a href="https://validator.w3.org/" target="_blank">유효성 검사 사이트</a>
 </body>

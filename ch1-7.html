@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>레이아웃</title>
+    <style>
+        .codeblock {
+            background-color: lightblue;
+            border-color: rgb(0, 128, 170);
+            border-style: solid;
+            border-width: 0px 0px 0px 5px;
+            padding: 5px;
+            line-height: 2;
+            margin: 10px 0 10px 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+            /*축약형*/
+            margin: 20px 0 0 30px;
+        }
+
+        th,
+        tr,
+        td {
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            border: 1px dashed #aaa;
+            padding: 15px;
+            clear: both;
+        }
+
+        .container div,
+        .container span.ch {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #aaa;
+            color: #fff;
+        }
+
+        .container :nth-child(1) {
+            background-color: green;
+        }
+
+        .container :nth-child(2) {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Display</h2>
+    요소의 rendering box 유형을 결정<br>
+    <div class="codeblock">
+        diplay:none|block|inline|inline-block|list-item|flex|inline-flex|table|table-cell
+    </div>
+    inline-block : inline level 요소처럼 렌더링(배치)되지만 block level의 성질을 가짐<br>
+    <table>
+        <thead>
+            <tr>
+                <th> </th>
+                <th>width</th>
+                <th>height</th>
+                <th>margin</th>
+                <th>padding</th>
+                <th>border</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>block</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+            </tr>
+            <tr>
+                <td>inline</td>
+                <td>X</td>
+                <td>X</td>
+                <td>좌/우</td>
+                <td>좌/우</td>
+                <td>좌/우</td>
+            </tr>
+            <tr>
+                <td>inline-block</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Visibility</h2>
+    <div class="codeblock">visibility:visible|hidden|collapse </div>
+    collapse는 table속성에서만, internet explore와 firefox에서만 rendering 됨 <br>
+    <h3>display:none과 visibility:hidden의 차이점</h3>
+    <ul>
+        <li>display:none : 요소가 렌더링 되지 않음(DOM에 존재하지 않음)</li>
+        <li>visibility:hidden : 요소가 보이지는 않지만 렌더링 되며 화면에 공간을 가지고 있음(DOM에 존재함)</li>
+    </ul>
+
+    <h2>float</h2>
+    <div class="codeblock">float : none|left|right|initial|inherit;</div>
+    <h3>요소를 보통의 흐름에서 벗어나 띄워지게 함</h3>
+
+    <div class="container" style="width:400px;">
+        <div style="float:left;">Box1</div>
+        <div style="float:left;">Box2</div>
+        <span style="display: block; clear: both;"></span>
+    </div>
+
+    <h3>주변 텍스트나 인라인요소가 주위를 감싸는 특징이 있음.</h3>
+    <div class="container" style="width:400px;">
+        <div style="float:left;">Box1</div>
+        <div style="float:right;">Box2</div>
+        <p>CSS 속성(property) float 은 한 요소(element)가 보통 흐름(normal flow)으로부터 빠져 텍스트 및 인라인(inline) 요소가 그 주위를 감싸는 자기 컨테이너의
+            좌우측을 따라 배치되어야 함을 지정합니다. 부동(floating) 요소 는 float 의 계산값(computed value)이 none이 아닌 요소입니다.</p>
+        <span style="display: block; clear: both;"></span>
+    </div>
+
+    <h3>대부분의 요소에 display 값을 block으로 변경함.</h3>
+    <div class="container" style="width:400px;">
+        <span class="ch" style="float:left;">inline1</span>
+        <span class="ch">inline2</span>
+        <span style="display: block; clear: both;"></span>
+    </div>
+
+    <h2 style="clear: both;">clear</h2>
+    floating 된 요소의 영향에서 벗어나 다음 행으로 이동<br>
+    block-level 요소에만 적용이 가능하다<br>
+    <div class="codeblock">clear: none | left | right | both | initial | inherit;</div>
+    <ul>
+        <li>none : 양쪽으로 floating 요소를 허용(기본값)</li>
+        <li>left : 왼쪽으로 floating 요소를 허용하지 않음</li>
+        <li>right : 오른쪽으로 floating 요소를 허용하지 않음</li>
+        <li>both : 양쪽으로 floating 요소를 허용하지 않음</li>
+    </ul>
+
+    <h2>position&offset</h2>
+    <div class="codeblock">position: static | absolute | fixed | relative | sticky | initial | inherit;</div>
+    <p>
+        요소의 위치를 원하는 곳으로 이동시킬 때 사용<br>
+        부모요소가 relative로 지정된 것이 없을때는 body를 기준으로 상대적 위치가 결정됨.
+    </p>
+</body>

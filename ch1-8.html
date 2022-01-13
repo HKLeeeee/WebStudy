@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 미디어쿼리 </title>
+    <style>
+        .codeblock {
+            background-color: lightblue;
+            border-color: rgb(0, 128, 170);
+            border-style: solid;
+            border-width: 0px 0px 0px 5px;
+            padding: 5px;
+            line-height: 2;
+            margin: 10px 0 10px 0;
+            width: 700px;
+        }
+
+        /* 디스플레이 크기에 따른 배경색상 변경
+         * ~767 : mobile
+         * 768~1024 : tablet
+         * 1025~ : desktop 
+        */
+        @media screen and (max-width: 767px) {
+            body {
+                background-color: gold;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            body {
+                background-color: lightblue;
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            body {
+                background-color: lightpink;
+            }
+        }
+        /* 웹 페이지를 인쇄하는 경우의 스타일 추가
+        */
+
+        @media print{
+            a { 
+                text-decoration: none;
+                color : black;
+            }
+            a:after {
+                display: line;
+                content: "("attr(href)")";
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Media Queries</h1>
+    <p>
+        반응형 웹 사이트를 만들기 위한 것 <br>
+        각 미디어 매체(screen, print)에 따라 다른 스타일 시트를 적용할 수 있게 만드는 것!<br>
+        css2에서는 media type
+    </p>
+
+    <h2>Media Queries 구문 </h2>
+    <p>
+        @media media queries{/*style rules*/} <br>
+        media queries가 참이면 적용!
+    </p>
+    <ul>
+        <li>미디어 타입 : all, print, screen </li>
+        <li>미디어 특성 : width, orientation </li>
+    </ul>
+
+    <h2>Syntax</h2>
+    <p style="color: gray;">
+        S* : 공백 <br>
+        [] : 있을 수 도 없을 수 도 <br>
+        a|b : a or b <br>
+        ? : 0 or 1 <br>
+        * : 0 or 1 or ... n <br>
+    </p>
+    <p style="border: 3px solid black; padding : 10px; width: 600px;">
+        media_query_list <br>
+        : S* [media_query [ ',' S* media_query ]* ]? <br>
+        ;<br>
+        media_query<br>
+        : [ONLY | NOT]? S* <b>media_type</b> S* [ AND S* expression ]*<br>
+        | expression [ AND S* expression ]*<br>
+        ;<br>
+        expression<br>
+        : '(' S* <b>media_feature</b> S* [ ':' S* expr ]? ')' S*<br>
+        ;<br>
+    </p>
+    <ol>
+        <li>여러 개의 미디어 쿼리로 이루어진 리스트로 작성할 수 있다.</li>
+        <li>미디어 타입 또는 표현식 단독으로도 작성할 수 있다.</li>
+        <li>표현식은 값이 없이 특성 이름만으로 작성할 수 있다.</li>
+    </ol>
+    <p class="codeblock">
+        /* mobile first*/ <br>
+        <b>body { background-color: gold; }</b><br>
+        @media (min-width: 768px) and (max-width: 1024px) {<br>
+        body { background-color: lightblue; }<br>
+        }<br>
+        @media (min-width: 1025px) {<br>
+        body { background-color: lightpink; }<br>
+        }
+    </p>
+    <p class="codeblock">
+        /* desktop first*/ <br>
+        <b>body { background-color: lightpink; }</b> <br>
+        @media (min-width: 768px) and (max-width: 1024px) {<br>
+        body { background-color: lightblue; }<br>
+        }<br>
+        @media (max-width: 767px) {<br>
+        body { background-color: gold; }<br>
+        }
+    </p>
+    <h3>print 미디어타입 실습</h3>
+    <p>W3C는 <a href="https://www.w3.org/TR/css3-mediaqueries/">CSS3 미디어쿼리 문서</a>를 2012년 6월에 표준 권고안으로 제정하였습니다.</p>
+	<p>또한, 기존의 미디어쿼리 개선 작업을 진행 중이며, 2017년 9월에 <a href="https://www.w3.org/TR/mediaqueries-4/">미디어쿼리 레벨4</a>를 발표했습니다. 이 문서는 현재 유력 표준 권고안입니다.</p>
+    <ul>
+        <li><a href="https://www.w3.org/TR/css3-mediaqueries/">media queries level 3</a></li>
+        <li><a href="https://www.w3.org/TR/mediaqueries-4/">media queries level 4</a></li>
+    </ul>
+</body>

@@ -1,5 +1,7 @@
 # WebStudy
-html, css, javascript 공부를 위한 repository    
+html, css, javascript 공부를 위한 repository     
+git hub 관리를 잘하자...ㅠ  
+key를 업로드 하지 말자ㅠㅜ
 
 ## website
 * https://www.w3schools.com/

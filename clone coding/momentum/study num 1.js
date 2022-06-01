@@ -90,13 +90,59 @@
 // } else if (age > 70) {
 //     console.log('You should not drink');
 // }
+function handleClickEx() {
+    alert('Button was clicked');
+}
+
+function handleTitleClick() {
+    alert('Title was clicked');
+}
+
+function handleMouseEnter() {
+    console.log('mouse is here!');
+}
+function handleMouseLeave() {
+    console.log('mouse is gone!');
+}
 
 window.onload = function() {
     const why = document.getElementById("header");
+    // same as doument.querySelector("#header");
     console.dir(why);
+    why.addEventListener("click", handleTitleClick);
+    // same as why.onclick = handleTitleClick;
+    why.addEventListener('mouseenter', handleMouseEnter);
+    // .removeEventListener
+    why.addEventListener('mouseleave', handleMouseLeave)
+    const tt = document.getElementsByTagName('title');
+    console.log(tt);
+    console.dir(tt);
+
+    const qSelector = document.querySelector(".hello h2"); // 첫번째 요소 하나만 가져옴
+    // 모든 요소를 가져오려면 querySelecctorAll
+    console.log(qSelector);
+    qSelector.style.color = 'red';
+
 }
 
 console.log('외 않되?');
-const tt = document.getElementsByTagName('title');
-console.log(tt);
-console.dir(tt);
+
+
+function handleWindowResize() {
+    document.body.style.backgroundColor = 'tomato';
+}
+function handleWindowCopy(){
+    alert('Copier!')
+}
+function handleWindowOnline(){
+    alert('All Good')
+}
+
+function handleWindowOffline(){
+    alert('Oops')
+}
+
+window.addEventListener('resize', handleWindowResize);
+window.addEventListener('copy', handleWindowCopy);
+window.addEventListener('online', handleWindowOnline);
+window.addEventListener('offline', handleWindowOffline);

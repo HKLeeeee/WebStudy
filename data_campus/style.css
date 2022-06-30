@@ -1,0 +1,84 @@
+p {
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+    font-size: 16pt;
+}
+p.c1 {
+    width: 700px;
+    height: 80px;
+    color: green;
+}
+p.c2 {
+    width: 50%;
+    height: 150%;
+    color: purple;
+}
+p.c3 {
+    width: 10cm;
+    height: 3cm;
+    color: blue;
+}
+
+body {
+    font-family: Consolas;
+}
+
+h3.none {
+    border-style: none;
+}
+
+h3.hidden {
+    border-style: hidden;
+}
+h3.dotted {
+     border-style: dotted;
+ }
+h3.dashed {
+      border-style: dashed;
+  }
+h3.solid {
+       border-style: solid;
+   }
+h3.double {
+        border-style: double;
+    }
+h3.groove {
+         border-style: groove;
+     }
+h3.ridge {
+    border-style: ridge;
+}
+h3.inset {
+    border-style: inset;
+}
+h3.outset {
+    border-style: outset;
+}
+h3.mix {
+    border-style: dotted dashed solid double;
+}
+
+td, th {
+    border : 1px solid black;
+}
+#tb1 {
+    border : 2px solid red;
+    border-collapse: separate;
+}
+
+#tb2 {
+    width: 250px;
+    border : 3px dotted teal;
+    background-color: yellow;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#tb3 {
+    caption-side: top;
+    width : 250px;
+    border: 1px solid blue;
+    border-collapse: separate;
+    empty-cells: show;
+}

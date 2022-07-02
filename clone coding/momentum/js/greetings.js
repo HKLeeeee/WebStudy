@@ -6,9 +6,9 @@ const greeting = document.querySelector("#greeting");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "userName";
-link.addEventListener("click", handlelinkClicked);
+// link.addEventListener("click", handlelinkClicked);
 
-function paingGreetings(username){
+function paintGreetings(username){
     //greeting.innerText ="Hello "+userName;
     greeting.innerText = `Hello ${username}`; // new way!  `` 백틱기호 
     greeting.classList.remove(HIDDEN_CLASSNAME);
@@ -21,7 +21,7 @@ function onLoginBtnClick(event){ // 이벤트 발생시 이벤트에 대한 정�
     const userName = loginInput.value;
 
     localStorage.setItem(USERNAME_KEY, userName)
-    paingGreetings(userName);
+    paintGreetings(userName);
 
     // if(userName === "" ){
     //     alert("Please write your name.");
@@ -47,6 +47,6 @@ if (savedUserName == null){
     loginForm.classList.remove(HIDDEN_CLASSNAME);
 } else {
     // show the greeting
-    paingGreetings(savedUserName);
+    paintGreetings(savedUserName);
 }
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+    <title>CSS_실습문제_3</title>
+    <style>
+		div {
+			width: 100px;
+			height: 35px;
+			text-align: center;
+		}
+
+		#bro > div:first-child {
+			background-color: red;
+		}
+
+		#bro > div:last-child {
+			background-color: blue;
+		}
+		/* 마지막 태그가 div 태그인지 확인 후 
+		일치하지 않으면 스타일 적용 X */
+
+		#bro > :nth-child(2) {
+			background-color: yellow;
+		}
+
+		#bro > :nth-last-child(1) {
+			color: blue;
+		}
+
+		#bro > :nth-last-child(2) {
+			background-color: lightgreen;
+		}
+		
+    </style>
+</head>
+<body>
+	<div id="bro">
+		<div>첫째</div>
+		<div>둘째</div>
+		<div>셋째</div>
+		<div>넷째</div>
+		<span>강아지</span>
+	</div>
+</body>
+</html>

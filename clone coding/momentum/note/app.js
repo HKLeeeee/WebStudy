@@ -1,4 +1,4 @@
-console.log('app.js has runned');
+console.log('greetings.js has runned');
 
 window.onload = function() {
     const h1 = document.querySelector('#header');
@@ -38,3 +38,19 @@ window.onload = function() {
 
     h1.addEventListener('click', changeH1Color);
 }
+
+
+////////////////////////////////////
+
+const clock = document.querySelector("h2#clock");
+const date = new Date();
+
+function sayHello(){
+    console.log("hello!");
+}
+
+// setInterval(sayHello, 5000); // 정한 ms 마다 해당 함수를 실행
+setTimeout(sayHello, 5000); // 정한 ms 후 함수를 실행
+
+//// "1".padStart(2, "0"); >>출력>> "01"
+//// "1".padEnd(2, "0"); >>출력>> "10"

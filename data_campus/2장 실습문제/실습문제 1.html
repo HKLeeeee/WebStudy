@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            overflow: auto;
+            font-size: 1.5rem;
+        }
+        .default {
+            background-color: lightgray;
+            border-radius: 1em;
+            margin: 3px;
+            text-align: center;
+        }
+        section{
+            width: 80%;
+            float: left;
+        }
+        #article {
+            background-color: deeppink;
+            border-radius: 1em;
+            height: 45%;
+            margin: 5px;
+        }
+        .article{
+            background-color: deepskyblue;
+            border-radius: 1em;
+            height: 45%;
+            margin: 5px;
+        }
+        aside{
+            float : right;
+            width: 18%;
+        }
+
+    </style>
+</head>
+<body style="overflow: auto">
+    <header class="default" style="height: 3em; line-height: 3em">header</header>
+    <nav class="default" style="height: 3em; line-height: 3em">nav</nav>
+    <div style="overflow:auto;">
+    <section class="default" style="height: 25em; padding-top: 10px">
+        <div style="height: 7%">section</div>
+        <article id="article">article1</article>
+        <article class="article">article2</article>
+    </section>
+    <aside class="default" style="height: 25em; line-height: 25em">aside</aside>
+    </div>
+    <footer class="default" style="height: 3em; line-height: 3em">footer</footer>
+</body>
+</html>

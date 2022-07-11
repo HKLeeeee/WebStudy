@@ -35,7 +35,6 @@ function onLoginBtnClick(event){ // 이벤트 발생시 이벤트에 대한 정�
 
 function handlelinkClicked(event){
     event.preventDefault();
-    console.dir(event);
 }
 
 // loginButton.addEventListener("click", onLoginBtnClick);

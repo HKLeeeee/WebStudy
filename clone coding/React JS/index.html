@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>First React </title>
+</head>
+<html>
+<body>
+<div id="root"></div>
+</body>
+
+
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    // const span = React.createElement("h3", {
+    //     id:"sexy-span",
+    //     onMouseEnter: () => console.log("mouse enter")
+    // },"Hello I'm a span");
+    const Title = () => (
+        <h3 id='title' onMouseEnter={() => console.log("mouse enter")}>
+            Hello I'm a title
+        </h3>)
+    // JSX, Barbel에서 변환 확인할 수 있음.
+
+    // const btn = React.createElement("button", {
+    //     onClick: () => console.log("clicked"),
+    // }, "Click me");
+    const Button = () => (
+        <button onClick={() => console.log("button clicked")}
+                style={{backgroundColor : "tomato"}}>
+            Click me
+        </button>
+    );
+    //const container = React.createElement("div", null, [Title, btn]);
+    const Container = () => (<div>
+        <Title/>
+        <Button />
+    </div>);
+    ReactDOM.render(<Container/>, root);
+</script>
+</html>

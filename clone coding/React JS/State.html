@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>First React </title>
+</head>
+<html>
+<body>
+<div id="root"></div>
+</body>
+
+
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!--<script type="text/babel" id="not-good-way">-->
+<!--    const root = document.getElementById("root");-->
+<!--    let counter = 0;-->
+<!-- React js는 새로 랜더링하더라도 이전과 바뀐부분만 다시 렌더링함!! super cool! -->
+<!--    function countUp(){-->
+<!--        counter += 1;-->
+<!--        render(); //rerendering-->
+<!--    }-->
+<!--    function render() {-->
+<!--        ReactDOM.render(<Container/>, root);-->
+<!--    }-->
+<!--    function Container() {-->
+<!--        return (-->
+<!--            <div>-->
+<!--                <h3 id='title'>-->
+<!--                    Total Clicks: {counter}-->
+<!--                </h3>-->
+<!--                <button onClick={countUp}>-->
+<!--                    Click me-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        );-->
+<!--    }-->
+<!--    render();-->
+<!--</script>-->
+<script type="text/babel" id="good-way">
+    const root = document.getElementById("root");
+    function App() {
+        const [counter, setCounter] = React.useState(0);
+
+        const onClick = () => {
+            setCounter(counter + 1);
+        };
+
+        return (
+            <div>
+                <h3 id='title'>
+                    Total Clicks: {counter}
+                </h3>
+                <button onClick={onClick}>
+                    Click me
+                </button>
+            </div>
+        );
+    }
+    ReactDOM.render(<App/>, root)
+</script>
+</html>
+
+
